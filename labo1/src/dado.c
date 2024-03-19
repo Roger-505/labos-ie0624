@@ -1,18 +1,39 @@
 #include <pic14/pic12f675.h>
 
 void delay(unsigned int tiempo);
-void random(void);
+int random(void);
 
 void main(void)
 {
-    TRISIO = 0x00;      // Poner pines GPIO[5:0] (exceptuando GPIO3) como salidas
-    GPIO = 0x00;        // Poner todas las salidas en bajo 
+    TRISIO = (TRISIO << 6) | 0x08;          // Poner pines GPIO[5:4] y GPIO[2:0] como salidas, y GPIO3 como entrada
+    GPIO &= 0x08;                            // Poner GPIO[5:4] y GPIO[2:0] en bajo
     
     unsigned int time = 100;
-    
+    int temp = random();
+
     while (1)
-    {
-        
+    {   
+        switch (temp)
+        {
+            case 1:
+                GPIO = 0x10;
+                break;
+            case 2:
+                GPIO = 0x02;
+                break;
+            case 3:
+                GPIO = 0x14;
+                break;
+            case 4:
+                GPIO = 0x05;
+                break;
+            case 5:
+                GPIO = 0x15;
+                break;
+            case 6:
+                GPIO = 0x07;
+                break;
+        }
     }
 }
 
@@ -25,7 +46,7 @@ void delay(unsigned int tiempo)
         for(j = 0; j < 1275; j++);
 }
 
-void random(void)
+int random(void)
 {
     return 6;
 }
