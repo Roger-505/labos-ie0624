@@ -1,6 +1,7 @@
 #include <pic14/pic12f675.h>
 
 void delay(unsigned int tiempo);
+void random(void);
 
 void main(void)
 {
@@ -11,8 +12,7 @@ void main(void)
     
     while (1)
     {
-        GPIO = 0x10;
-        delay(time);
+        
     }
 }
 
@@ -23,4 +23,9 @@ void delay(unsigned int tiempo)
 
     for(i = 0; i < tiempo; i++)
         for(j = 0; j < 1275; j++);
+}
+
+void random(void)
+{
+    return 6;
 }
