@@ -1,7 +1,9 @@
 #include <pic14/pic12f675.h>
 
+// declaración de funciones
 void delay(unsigned int tiempo);
 
+// función principal
 void main(void)
 {
     // declaraciones de variables
@@ -37,6 +39,8 @@ void main(void)
     }
 }
 
+// función delay, para detener al MCU
+// por un tiempo
 void delay(unsigned int tiempo)
 {
     unsigned int i;
