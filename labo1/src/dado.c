@@ -1,5 +1,9 @@
 #include <pic14/pic12f675.h>
 
+// programación de los bits de configuración CONFIG
+typedef unsigned int word;
+word __at 0x2007 __CONFIG = (_MCLRE_OFF);
+
 // declaración de funciones
 void delay(unsigned int tiempo);
 
@@ -10,7 +14,7 @@ void main(void)
     int temp;   // variable aleatoria por implementar
     
     // inicialización de registros
-    TRISIO = (TRISIO << 6) | 0x01;  // Poner pines GPIO[5:4] y GPIO[2:0] como salidas, y GPIO3 como entrada
+    TRISIO &= 0x00;                  // Poner pines GPIO[5:4] y GPIO[2:0] como salidas, y GPIO3 como entrada
     GPIO &= 0x00;                   // Poner GPIO[5:4] y GPIO[2:0] en bajo
     
     while (1)
