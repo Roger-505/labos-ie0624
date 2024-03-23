@@ -14,7 +14,7 @@ void main(void)
     int temp;   // variable aleatoria por implementar
     
     // inicialización de registros
-    TRISIO &= 0x00;                 // Poner pines GPIO[5:4] y GPIO[2:0] como salidas. GPIO3 siempre se lee como 1
+    TRISIO &= 0x08;                 // Poner pines GPIO[5:4] y GPIO[2:0] como salidas. GPIO3 siempre se lee como 1
     GPIO &= 0x08;                   // Poner GPIO[5:4] y GPIO[2:0] en bajo
     
     while (1)
