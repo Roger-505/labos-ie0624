@@ -2,7 +2,7 @@
 
 // programación de los bits de configuración CONFIG
 typedef unsigned int word;
-word __at 0x2007 __CONFIG = (_MCLRE_OFF);
+word __at 0x2007 __CONFIG = (_WDTE_OFF);
 
 // declaración de funciones
 void delay(unsigned int tiempo);
