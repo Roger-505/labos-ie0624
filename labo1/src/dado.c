@@ -24,9 +24,11 @@ void main(void)
     GO_DONE = 1;    // empezar conversión ADC
     while (GO_DONE) // esperar a que la conversión ADC termine
         continue;        
-
+    resultadoADC = ADRESH;  // obtener resultado de la conversión ADC
+     
     while (1)
     {
+        rand_dado = (resultadoADC % 6) + 1;
         switch (rand_dado)
         {
             case 1:
