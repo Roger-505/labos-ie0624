@@ -14,6 +14,11 @@ void main(void)
     TRISIO &= 0x09; // poner pines GPIO[5:4,2:1] como salidas, GPIO[0] como entrada 
     GPIO &= 0x08;   // poner GPIO[5:4,2:1] en bajo
     
+    // inicialización del módulo ADC
+    ANSEL &= 0x71;  // pines 3, 5, 6 se usarán como entradas digitales y no AN3, AN2, AN1 
+    ANSEL |= 0x01;  // habilitar pin 7 como entrada analógica AN0
+    ANSEL |= 0x70;  // escoger el oscilador interno FRC como reloj de conversión ADC 
+
     while (1)
     {
         switch (temp)
