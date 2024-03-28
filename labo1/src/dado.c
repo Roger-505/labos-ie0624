@@ -18,7 +18,8 @@ void main(void)
     ANSEL &= 0x71;  // pines 3, 5, 6 se usarán como entradas digitales y no AN3, AN2, AN1 
     ANSEL |= 0x01;  // habilitar pin 7 como entrada analógica AN0
     ANSEL |= 0x70;  // escoger el oscilador interno FRC como reloj de conversión ADC 
-    
+    CMCON &= 0x00;  // apagar comparadores
+
     while (1)
     {
         switch (rand_dado)
