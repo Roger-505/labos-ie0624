@@ -19,6 +19,11 @@ void main(void)
     ANSEL |= 0x01;  // habilitar pin 7 como entrada analógica AN0
     ANSEL |= 0x70;  // escoger el oscilador interno FRC como reloj de conversión ADC 
     CMCON &= 0x00;  // apagar comparadores
+    
+    // empezar conversión ADC
+    GO_DONE = 1;    // empezar conversión ADC
+    while (GO_DONE) // esperar a que la conversión ADC termine
+        continue;        
 
     while (1)
     {
