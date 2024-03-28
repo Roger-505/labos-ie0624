@@ -16,7 +16,7 @@ void main(void)
     GPIO &= 0x08;   // poner GPIO[5:4,2:1] en bajo
     
     // inicialización del módulo ADC
-    ANSEL &= 0x71;  // pines 3, 5, 6 se usarán como entradas digitales, y el pin 7 como AN0
+    ANSEL &= 0x71;  // pines 3, 5, 6 se usarán como salidas digitales, y el pin 7 como AN0
     ANSEL |= 0x70;  // escoger el oscilador interno FRC como reloj de conversión ADC 
     CMCON &= 0x00;  // apagar comparadores
     ADON = 1;       // habilitar módulo de conversión ADC
