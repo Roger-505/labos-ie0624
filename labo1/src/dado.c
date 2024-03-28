@@ -8,7 +8,7 @@ word __at 0x2007 __CONFIG = (_WDTE_OFF);
 void main(void)
 {
     // declaraciones de variables
-    int temp;   // variable aleatoria por implementar
+    unsigned int rand_dado;   
     
     // inicialización de registros
     TRISIO &= 0x08;                 // Poner pines GPIO[5:4] y GPIO[2:0] como salidas. GPIO3 siempre se lee como 1
