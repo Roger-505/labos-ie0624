@@ -9,6 +9,7 @@ void main(void)
 {
     // declaraciones de variables
     unsigned int rand_dado;   
+    unsigned int resultadoADC;
     
     // inicialización de registros
     TRISIO &= 0x09; // poner pines GPIO[5:4,2:1] como salidas, GPIO[0] como entrada 
