@@ -11,8 +11,8 @@ void main(void)
     unsigned int rand_dado;   
     
     // inicialización de registros
-    TRISIO &= 0x08;                 // Poner pines GPIO[5:4] y GPIO[2:0] como salidas. GPIO3 siempre se lee como 1
-    GPIO &= 0x08;                   // Poner GPIO[5:4] y GPIO[2:0] en bajo
+    TRISIO &= 0x09; // poner pines GPIO[5:4,2:1] como salidas, GPIO[0] como entrada 
+    GPIO &= 0x08;   // poner GPIO[5:4,2:1] en bajo
     
     while (1)
     {
