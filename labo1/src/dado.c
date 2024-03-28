@@ -4,9 +4,6 @@
 typedef unsigned int word;
 word __at 0x2007 __CONFIG = (_WDTE_OFF);
 
-// declaración de funciones
-void delay(unsigned int tiempo);
-
 // función principal
 void main(void)
 {
@@ -41,15 +38,4 @@ void main(void)
                 break;
         }
     }
-}
-
-// función delay, para detener al MCU
-// por un tiempo
-void delay(unsigned int tiempo)
-{
-    unsigned int i;
-    unsigned int j;
-
-    for(i = 0; i < tiempo; i++)
-        for(j = 0; j < 1275; j++);
 }
