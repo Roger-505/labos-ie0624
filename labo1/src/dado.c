@@ -37,6 +37,7 @@ void setupADC(void)
 {
     ANSEL |= 0x70;  // escoger el oscilador interno FRC como reloj de conversión ADC 
     CMCON &= 0x00;  // apagar comparadores
+    ADFM = 1;       // justificación derecha en el resultado de 10 bits de la conversión ADC
     ADON = 1;       // habilitar módulo de conversión ADC
 }
 
@@ -46,7 +47,7 @@ unsigned int leerADC(void)
     GO_DONE = 1;    // empezar conversión ADC
     while (GO_DONE) // esperar a que la conversión ADC termine
         continue;        
-    return ADRESH;  // obtener resultado de la conversión ADC
+    return (ADRESH<<8) + ADRESL;  // obtener resultado de la conversión ADC
 }
 
 // mostrar valor aleatorio en la cara del dado
