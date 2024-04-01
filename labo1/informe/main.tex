@@ -1,0 +1,23 @@
+\documentclass[12pt]{article}
+
+\usepackage{preambulo}
+
+\begin{document}
+    \input{tikzset.tex}
+    \pagestyle{fancy}
+    \input{hdrftr.tex}
+    
+    \setstretch{1.1}{
+    \input{reporte/portada.tex}
+    \pagebreak
+    \input{reporte/intro.tex}
+    \pagebreak
+    \input{reporte/nota.tex}
+    \pagebreak
+    \input{reporte/desarrollo.tex}
+    \pagebreak
+    \input{reporte/conclusiones.tex}
+    \pagebreak
+    \input{reporte/apendices}
+    }
+\end{document}
