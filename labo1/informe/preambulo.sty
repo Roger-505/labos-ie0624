@@ -35,7 +35,12 @@
 \usepackage{listings}               % generar listado de código fuente
 \usepackage{mdframed}               % generar bordes cuadrados alrededor de texto
 \usepackage{booktabs}               % generar tablas con diferentes diseños
-
+\usepackage{titlesec}               % generar multiples niveles de secciones
+\usepackage{pifont}                 % generar símbolos x y check
+\usepackage{makecell}               % generar tablas con celdas modificadas
+\usepackage{rotating}               % rotar texto
+\usepackage{customdice}             % generar dados
+        
 %%%%%%%%%%%%%%%%%%%%
 % Paquetes de TiKZ %
 %%%%%%%%%%%%%%%%%%%%
@@ -56,6 +61,12 @@ linkcolor=red
 \setlength{\parindent}{0pt}             % tamaño de sangrías
 \setlength{\headheight}{14.49998pt}     % tamaño de separación entre encabezado y texto
 \addtolength{\topmargin}{-0.49998pt}    % tamaño de margen superior
+\setcounter{secnumdepth}{4}             % generar seccion de 4 niveles
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definiciones de comandos %
@@ -68,4 +79,7 @@ linkcolor=red
 \newcommand{\N}{\mathbb{N}}     % numeros naturales
 \newcommand{\C}{\mathbb{C}}     % numeros complejos
 \newcommand{\R}{\mathbb{R}}     % numeros reales
-\renewcommand{\exp}[1]{e^{#1}}  % exponencial 
+\renewcommand{\exp}[1]{e^{#1}}  % exponencial a
+\newcommand{\cmark}{\ding{51}}  % checkmark
+\newcommand{\xmark}{\ding{55}}  % x-mark
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}         % generar puntos negros escalables
